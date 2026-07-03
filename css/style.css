@@ -1,0 +1,346 @@
+/* =========================
+PALETA ROMANTICA
+========================= */
+
+:root {
+
+    --blanco: #f4f4f2;
+    --gris-claro: #e5e6e6;
+    --gris-suave: #d6d8d9;
+    --gris-medio: #bfc5c9;
+    --azul-gris: #9fb0bf;
+    --azul-gris-profundo: #7f949f;
+    --gris-oscuro: #5f6f78;
+
+    --texto: #5f6f78;
+    --fondo: #f4f4f2;
+
+}
+
+
+/* =========================
+RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    overflow-x: hidden;
+}
+
+
+/* =========================
+INTRO
+========================= */
+
+#intro {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, #f4f4f2, #e5e6e6, #d6d8d9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity .8s ease;
+    z-index: 999;
+}
+
+.intro-content {
+    text-align: center;
+}
+
+.intro-content h1 {
+    font-size: 42px;
+    font-weight: 300;
+    margin-bottom: 15px;
+    color: var(--gris-oscuro);
+}
+
+.intro-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: var(--azul-gris-profundo);
+}
+
+button {
+    background: var(--azul-gris);
+    border: none;
+    padding: 14px 40px;
+    border-radius: 30px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    background: var(--azul-gris-profundo);
+    transform: scale(1.05);
+}
+
+
+/* =========================
+CONTENIDO
+========================= */
+
+#contenido {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+
+/* =========================
+HEADER
+========================= */
+
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(180deg, #e5e6e6, #f4f4f2);
+}
+
+header h1 {
+    font-size: 34px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: var(--azul-gris-profundo);
+}
+
+#contador {
+    font-size: 18px;
+    color: var(--gris-oscuro);
+}
+
+
+/* =========================
+SECCIONES
+========================= */
+
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    font-weight: 300;
+    margin-bottom: 30px;
+    font-size: 26px;
+}
+
+
+/* =========================
+GRID
+========================= */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+/* =========================
+CARDS (RAZONES)
+========================= */
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 15px;
+    line-height: 1.6;
+    transition: .3s;
+    border: 1px solid var(--gris-claro);
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* EFECTO AL HACER CLICK */
+.card:active {
+    background: var(--azul-gris);
+    color: white;
+}
+
+
+/* =========================
+FOTOS
+========================= */
+
+.fotos img {
+    width: 100%;
+    border-radius: 12px;
+    transition: .3s;
+}
+
+.fotos img:hover {
+    transform: scale(1.03);
+}
+
+/* MODAL FOTO CON TEXTO */
+
+#modalFoto {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+    animation: fadeIn .3s ease;
+    padding: 20px;
+}
+
+#modalFotoImg {
+    max-width: 400px;
+    width: 90%;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+#modalFotoTexto {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 400px;
+    text-align: center;
+    line-height: 1.6;
+    color: #5f6f78;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+#cerrarFoto {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.fotos img {
+    cursor: pointer;
+    transition: .3s;
+}
+
+.fotos img:hover {
+    transform: scale(1.05);
+}
+
+/* =========================
+CANCIONES
+========================= */
+
+.song {
+    display: block;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--texto);
+    transition: .3s;
+    border: 1px solid var(--gris-claro);
+}
+
+.song:hover {
+    background: var(--azul-gris);
+    color: white;
+}
+
+
+/* =========================
+MENSAJE
+========================= */
+
+.mensaje {
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.mensaje p {
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 14px;
+    background: var(--gris-claro);
+    color: var(--gris-oscuro);
+    margin-top: 40px;
+}
+
+
+/* =========================
+MODAL ROMANTICO
+========================= */
+
+#modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn .3s ease;
+}
+
+#modal img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+#cerrar {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#cerrar:hover {
+    transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
